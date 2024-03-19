@@ -83,6 +83,11 @@ def execute_browser_tasks(username, password):
 	# Get rid of "Notifications" message
 	spammer(driver, r"""/html/body/div[3]/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[3]/button[2]""")
 
+	# Move from the homepage to your profile's followers page
+	driver.get("https://www.instagram.com/"+username+"/followers")
+
+	
+
 	time.sleep(100)
 
 
@@ -90,6 +95,17 @@ def execute_browser_tasks(username, password):
 
 
 
+
+# Get the list of all followers by mining the HTML code of the followers page (this code still must be obtained manually)
+my_file = open("HTML of follower list.txt","r")
+HTML_string = ""
+for my_line in my_file:
+	HTML_string = HTML_string + my_line
+
+
+#print(HTML_string)
+
+exit()
 
 
 execute_browser_tasks("drake_sorkhav",getpass.getpass())
